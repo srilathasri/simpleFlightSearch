@@ -1,0 +1,19 @@
+:host {
+    flex: 0 1 auto;
+    height: 54px;
+    border-bottom: 1px inset #ffffff;
+    background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+    header {
+        h1 {
+            color: #ffffff;
+            margin: 0px;
+            line-height: 54px;
+            padding: 0px 18px;
+            sub {
+                line-height: 1;
+                font-size: 16px;
+                font-weight: normal;
+            }
+        }
+    }
+}

@@ -1,0 +1,70 @@
+:host {
+    mat-form-field {
+        width: 100%;
+    }
+    .search--btn {
+        max-height: 36px;
+        align-self: center;
+    }
+    .container--btn {
+        flex: 1;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 10px;
+    }
+    .slider.range {
+        display: flex;
+        flex-flow: column nowrap;
+        flex: 1;
+        padding: 8px;
+        max-width: 180px;
+        .preview {
+            display: flex;
+            flex: 1;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            input {
+                width: 50%;
+                border: none;
+                &:first-child {
+                    text-align: left;
+                }
+                &:last-child {
+                    text-align: right;
+                }
+            }
+        }
+        nouislider {
+            margin: 6px;
+            &.pricerange {
+                margin-top: 24px;
+            }
+        }
+    }
+    @media screen and (max-width: 991px) {
+        /* start of large tablet styles */
+    }
+    @media screen and (max-width: 767px) {
+        /* start of medium tablet styles */
+        form {
+            display: flex;
+            flex-flow: row wrap;
+        }
+        .slider.range {
+            width: 50%;
+        }
+        mat-form-field {
+            padding: 1%;
+            width: 48%;
+        }
+    }
+    @media screen and (max-width: 479px) {
+        /* start of phone styles */
+        mat-form-field,
+        .slider.range {
+            width: 100%;
+        }
+    }
+}

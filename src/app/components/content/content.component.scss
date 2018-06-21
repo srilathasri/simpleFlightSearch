@@ -1,0 +1,17 @@
+:host {
+    /* start of desktop styles */
+    flex: 1 1 auto;
+    display: flex;
+    flex-flow: row nowrap;
+    @media screen and (max-width: 991px) {
+        /* start of large tablet styles */
+        overflow: auto;
+    }
+    @media screen and (max-width: 767px) {
+        /* start of medium tablet styles */
+        flex-flow: column nowrap;
+    }
+    @media screen and (max-width: 479px) {
+        /* start of phone styles */
+    }
+}

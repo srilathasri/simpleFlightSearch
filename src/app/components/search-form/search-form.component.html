@@ -1,0 +1,49 @@
+<form [formGroup]="searchForm" (ngSubmit)="searchForm.valid && search()">
+  <mat-form-field>
+    <input type="text" matInput formControlName="origin" placeholder="Enter origin city" [matAutocomplete]="auto">
+    <mat-icon matSuffix>flight_takeoff</mat-icon>
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let city of filteredCitiesOrigin" [value]="city.city + ' ~ ' + city.code">
+        <span>{{ city.city }} ({{ city.code }})</span>
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+  <mat-form-field>
+    <input type="text" matInput formControlName="destination" placeholder="Enter destination city" [matAutocomplete]="autoDest">
+    <mat-icon matSuffix>flight_land</mat-icon>
+    <mat-autocomplete #autoDest="matAutocomplete">
+      <mat-option *ngFor="let city of filteredCitiesDest" [value]="city.city + ' ~ ' + city.code">
+        <span>{{ city.city }} ({{ city.code }})</span>
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [formControlName]="'departure'" readonly (click)="dep.open()" [matDatepicker]="dep" placeholder="Departure date">
+    <mat-datepicker-toggle matSuffix [for]="dep"></mat-datepicker-toggle>
+    <mat-datepicker [startAt]="getDate()" [touchUi]="true" #dep></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field *ngIf="tripType==='return'">
+    <input matInput [required]="false" [formControlName]="'return'" (click)="return.open()" [matDatepicker]="return" placeholder="Return date">
+    <mat-datepicker-toggle matSuffix [for]="return"></mat-datepicker-toggle>
+    <mat-datepicker [startAt]="getDate()" [touchUi]="true" #return></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select formControlName="passengers" placeholder="Passengers">
+      <mat-option value="1">1</mat-option>
+      <mat-option value="2">2</mat-option>
+      <mat-option value="3">3</mat-option>
+      <mat-option value="4">4</mat-option>
+      <mat-option value="5">5</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div class="slider range">
+    <div class="preview">
+      <input type="text" readonly [value]="searchForm.controls['pricerange'].value[0]">
+      <input type="text" readonly [value]="searchForm.controls['pricerange'].value[1]">
+    </div>
+    <nouislider [min]="0" [connect]="true" [max]="12000" [step]="100" [formControl]="searchForm.controls['pricerange']" class="pricerange"></nouislider>
+  </div>
+  <div class="container--btn">
+    <button mat-raised-button class="search--btn" color="primary">SEARCH</button>
+  </div>
+</form>

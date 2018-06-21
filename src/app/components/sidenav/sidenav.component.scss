@@ -1,0 +1,41 @@
+:host {
+    flex: 0 1 auto;
+    width: 34%;
+    max-width: 320px;
+    min-width: 180px;
+    border-right: 1px inset #bbbbbb;
+    background-color: #ffffff;
+    .form-card {
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        margin: 8px;
+        border: 1px solid #cccccc;
+        .trip-type-tabs {
+            /deep/ {
+                .mat-tab-labels .mat-tab-label {
+                    min-width: 50%;
+                }
+                .mat-tab-body-wrapper {
+                    padding: 12px;
+                }
+            }
+        }
+    }
+    @media screen and (min-width: 992px) {
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    @media screen and (max-width: 991px) {
+        /* start of large tablet styles */
+    }
+    @media screen and (max-width: 767px) {
+        /* start of medium tablet styles */
+        width: 100%;
+        max-width: 100%;
+    }
+    @media screen and (max-width: 479px) {
+        /* start of phone styles */
+    }
+}

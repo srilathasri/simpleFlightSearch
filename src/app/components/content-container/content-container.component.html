@@ -1,0 +1,8 @@
+<aero-flight-card *ngFor="let result of readResults" class="flightem" [flightData]="result"></aero-flight-card>
+<div *ngIf="readResults && readResults.length === 0">
+    No flights found...
+</div>
+<div class="placeholder" *ngIf="readResults === undefined || readResults === null">
+    Make a journey that starts and does leave memories life time...
+</div>
+<!-- {{readResults | json}} -->

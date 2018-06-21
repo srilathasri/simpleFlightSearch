@@ -1,0 +1,71 @@
+<div class="flight">
+    <mat-card>
+      <mat-card-content>
+        <div class="info">
+          <div class="major">
+            <h2 class="fare">$ {{flightData.price}}</h2>
+            <div class="trips">
+              <div class="to">
+                <span class="code">
+                  {{flightData.to.code}}
+                </span>
+                <span class="route">
+                  {{flightData.to.path}}
+                </span>
+                <div class="self-justify">
+                  <div class="left">
+                    <span class="dep">
+                      Depart:
+                    </span>
+                    <span class="arr">
+                      Arrive:
+                    </span>
+                  </div>
+                  <div class="right">
+                    <span class="dep">
+                      {{flightData.to.dep | date: 'hh:mm a'}}
+                    </span>
+                    <span class="arr">
+                      {{flightData.to.arr | date: 'hh:mm a'}}
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="fro" *ngIf="flightData.fro">
+                <span class="code">
+                  {{flightData.fro.code}}
+                </span>
+                <span class="route">
+                  {{flightData.fro.path}}
+                </span>
+                <div class="self-justify">
+                  <div class="left">
+                    <span class="dep">
+                      Depart:
+                    </span>
+                    <span class="arr">
+                      Arrive:
+                    </span>
+                  </div>
+                  <div class="right">
+                    <span class="dep">
+                      {{flightData.fro.dep | date: 'hh:mm a'}}
+                    </span>
+                    <span class="arr">
+                      {{flightData.fro.arr | date: 'hh:mm a'}}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="minor">
+            <!--<div class="img-bg">
+              <img [src]="'http://via.placeholder.com/100x100'" [alt]="flightData.carrier">
+            </div>-->
+            <button mat-raised-button color="primary">Book this flight</button>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>

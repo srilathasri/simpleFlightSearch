@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~nouislider/distribute/nouislider.min.css";
+@import "./assets/fonts/product-sans/product-sans.css";
+@import "./assets/fonts/material/material-icons.css";
+@import "./default.theme";
+html,
+body {
+    margin: 0;
+    padding: 0;
+    &,
+    * {
+        font-family: "Product Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+    mat-icon {
+        background: -webkit-linear-gradient(#eee, #333);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .noUi-horizontal {
+        height: 4px;
+        border: none;
+        background: #6e6e6e;
+        box-shadow: none;
+        .noUi-handle {
+            &::before,
+            &::after {
+              display: none;
+            }
+            width: auto;
+            height: auto;
+            left: -9px;
+            top: -8px;
+            outline-style: hidden;
+            border-radius: 50%;
+            padding: 8px;
+        }
+    }
+}

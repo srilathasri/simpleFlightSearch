@@ -1,0 +1,12 @@
+<mat-card class="form-card">
+  <mat-card-content>
+    <mat-tab-group class="trip-type-tabs" (selectedTabChange)="oneway.syncFormValue() || return.syncFormValue()">
+      <mat-tab label="One way">
+        <aero-search-form tripType="oneway" #oneway (searchResult)="publishResult($event)"></aero-search-form>
+      </mat-tab>
+      <mat-tab label="Return">
+        <aero-search-form tripType="return" #return (searchResult)="publishResult($event)"></aero-search-form>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>

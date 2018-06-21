@@ -1,0 +1,18 @@
+:host {
+    display: flex;
+    flex: 1;
+    height: 100vh;
+    overflow: hidden;
+    background: #ffffff;
+    flex-flow: column nowrap;
+    @media screen and (max-width: 991px) {
+        /* start of large tablet styles */
+    }
+    @media screen and (max-width: 767px) {
+        /* start of medium tablet styles */
+        overflow: auto;
+    }
+    @media screen and (max-width: 479px) {
+        /* start of phone styles */
+    }
+}
